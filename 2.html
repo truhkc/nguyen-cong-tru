@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+
+
+
+
+.bootrapbtn { 
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.bootrapbtn:hover, .bootrapbtn:focus {
+  background-color: #2980B9;
+}
+
+.bootrap {
+  position: relative;
+  display: inline-block;
+}
+
+.bootrap-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.bootrap-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.bootrap  a:hover {background-color: #ddd;}
+
+.show1 {display: block;}
+
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button onmouseover="myFunction()" class="dropbtn">Trang chủ </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+<div class="bootrap">
+<button onmouseover="myFunction1()" class="bootrapbtn"> blog </button>
+     <div id="myBootrap" class="bootrap-content">
+    <a href="#a">a</a>
+    <a href="#b">b</a>
+    <a href="#c">C</a>
+  </div>
+</div>
+
+
+
+<script>
+/*Khi người dùng nhấp vào nút,
+chuyển đổi giữa ẩn và hiển thị nội dung thả xuống */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+// Đóng danh sách thả xuống nếu người dùng nhấp vào bên ngoài nó
+window.onmouseover = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function myFunction1() {
+  document.getElementById("myBootrap").classList.toggle("show1");
+}
+window.onmouseover = function(event) {
+  if (!event.target.matches('.bootrapbtn')) {
+    var bootrap = document.getElementsByClassName("bootrap-content");
+    var i;
+    for (i = 0; i < bootrap.length; i++) {
+      var openBootrap = bootrap[i];
+      if (openBootrap.classList.contains('show1')) {
+        openBootrap.classList.remove('show1');
+      }
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
